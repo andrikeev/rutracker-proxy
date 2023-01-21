@@ -1,0 +1,43 @@
+[versions]
+jsoup = "1.14.3"
+koin = "3.2.0-beta-1"
+kotlin = "1.7.20"
+ktor = "2.0.0"
+logback = "1.2.11"
+
+[libraries]
+jsoup = { group = "org.jsoup", name = "jsoup", version.ref = "jsoup" }
+koin = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-server-content-negotiation-jvm = { group = "io.ktor", name = "ktor-server-content-negotiation-jvm", version.ref = "ktor" }
+ktor-server-core-jvm = { group = "io.ktor", name = "ktor-server-core-jvm", version.ref = "ktor" }
+ktor-server-call-logging-jvm = { group = "io.ktor", name = "ktor-server-call-logging-jvm", version.ref = "ktor" }
+ktor-server-host-common-jvm = { group = "io.ktor", name = "ktor-server-host-common-jvm", version.ref = "ktor" }
+ktor-server-status-pages-jvm = { group = "io.ktor", name = "ktor-server-status-pages-jvm", version.ref = "ktor" }
+ktor-server-netty-jvm = { group = "io.ktor", name = "ktor-server-netty-jvm", version.ref = "ktor" }
+ktor-serialization-gson = { group = "io.ktor", name = "ktor-serialization-gson", version.ref = "ktor" }
+logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
+
+[bundles]
+ktor-client = [
+    "ktor-client-core",
+    "ktor-client-cio",
+    "ktor-client-logging"
+]
+ktor-server = [
+    "ktor-server-content-negotiation-jvm",
+    "ktor-server-core-jvm",
+    "ktor-server-call-logging-jvm",
+    "ktor-server-host-common-jvm",
+    "ktor-server-status-pages-jvm",
+    "ktor-server-netty-jvm",
+    "ktor-serialization-gson"
+]
+
+[plugins]
+application = { id = "org.gradle.application" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+shadow = { id = "com.github.johnrengelman.shadow", version = "7.1.2" }
